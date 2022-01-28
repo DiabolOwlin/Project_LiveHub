@@ -1,0 +1,49 @@
+body {
+    background: #D7E6EA;
+
+}
+
+.main-container{
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-header{
+    background-color: #0B5D71;
+}
+.logo{
+    margin-left:40px;
+    margin-top:10px;
+    flex-flow: row;
+    font-size: 30px;
+    font-family: Calibri, serif;
+    font-weight: bold;
+    color: white;
+
+}
+.colortext{
+    color: #00F7FF;
+}
+.lower-header{
+    background-color: white;
+    flex-direction: row;
+}
+
+ul.primary-list li{
+    display: inline;
+    margin-right: 15px;
+    font-family: Calibri, serif;
+    font-size: 24px;
+    color: white;
+}
+
+ul.secondary-list li{
+    display: inline;
+    margin-right: 15px;
+    font-family: Calibri, serif;
+    font-size: 18px;
+    color: #0B5D71;
+}

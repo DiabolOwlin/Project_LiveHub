@@ -8,9 +8,12 @@ class DefaultController extends AppController {
     {
         $this->render('login');
     }
-
-    public function projects()
+    public function registration()
     {
-        $this->render('projects');
+        $this->render('registration');
+    }
+    public function main_page()
+    {
+        $this->render('main_page');
     }
 }
