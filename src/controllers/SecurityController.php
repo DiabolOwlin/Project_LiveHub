@@ -1,13 +1,14 @@
 <?php
 
 require_once 'AppController.php';
-require_once __DIR__ .'/../models/User.php';
+require_once __DIR__.'/../models/User.php';
 
 class SecurityController extends AppController {
 
     public function login()
     {
-        $user = new User('ab@gmail.com', 'admin', 'Johnny', 'Snow');
+        $user = new User('ab@gmail.com', 'admin', 'Andrii', 'Banyk');
+
 
         if (!$this->isPost()) {
             return $this->render('login');
@@ -25,7 +26,7 @@ class SecurityController extends AppController {
         }
 
         $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/projects");
+        header("Location: {$url}/main_page");
     }
 
     public function registration()

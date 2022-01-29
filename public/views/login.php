@@ -47,19 +47,23 @@
             <div class="login-form">
                 <p style="font-size: 30px">LOG IN</p>
                 <p>Email</p>
-                <form>
-
-                    <input type="email" id="email" name="email">
+                <form class="login" action="login" method="POST">
+                    <div class="messages">
+                        <?php
+                        if(isset($messages)){
+                            foreach($messages as $message) {
+                                echo $message;
+                            }
+                        }
+                        ?>
+                    </div>
+                    <input name="email" type="text" placeholder="email@email.com">
+                    <p>Password</p>
+                    <input name="password" type="password" placeholder="password">
+                    <p>Forgot password?</p>
+                    <input type="submit" class="login-button" value="LOG IN">
                 </form>
 
-                <p>Password</p>
-                <form>
-                    <input type="password">
-                </form>
-
-                <p>Forgot password?</p>
-                <input type="button" class="login-button" onclick="" value="LOG IN"
-                >
                 <p>Or log in with other services</p>
                 <div id="my-signin2"></div>
                 <script>
