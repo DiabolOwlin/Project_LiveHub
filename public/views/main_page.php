@@ -12,9 +12,9 @@
                 <div class="logo">LIVE<span class="colortext">HUB</span></div>
                 <div class="primary-list">
                     <ul>
-                        <li>Main</li>
-                        <li>Popular</li>
-                        <li>Recent</li>
+                        <li>MAIN</li>
+                        <li>POPULAR</li>
+                        <li>RECENT</li>
                     </ul>
                 </div>
             </div>
@@ -39,8 +39,7 @@
         <div class="content">
             <div class="feed">
                 <div class="menu">
-
-                    <p>All flows</p>
+                    <div class="menu-name">All flows</div>
                     <div class="list-menu">
                         <ul>
                             <li>Articles</li>
@@ -48,13 +47,16 @@
                             <li>Authors</li>
                         </ul>
                     </div>
-
                 </div>
-                <div class="article"></div>
+                <div class="article">
+                <!--                    paste all articles that db has-->
+                </div>
             </div>
             <div class="column">
-                <div class="add"></div>
-                <div class="reading_right_now"
+                <div class="add">
+                    <div>Advertisement</div>
+                </div>
+                <div class="reading_right_now"></div>
             </div>
         </div>
         <div class="footer"></div>
