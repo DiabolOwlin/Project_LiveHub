@@ -18,8 +18,8 @@
             </div>
 
             <div class="registration-form">
-                <p style="font-size: 30px">Registration</p>
-                <p style="margin-top: -30px; font-size: 16px">With</p>
+                <p style="font-size: 20px">Registration</p>
+                <p style="margin-top: -10px; font-size: 14px">With</p>
 
                 <div id="my-signin2"></div>
                 <script>
@@ -32,7 +32,7 @@
                     function renderButton() {
                         gapi.signin2.render('my-signin2', {
                             'scope': 'profile email',
-                            'width': 240,
+                            'width': 50,
                             'height': 50,
                             'longtitle': true,
                             'theme': 'dark',
@@ -48,7 +48,7 @@
                 <p>Email</p>
                 <form>
 
-                    <input type="email" id="email" name="email" class="input">
+                    <input type="email" id="email" name="email" class="input" placeholder="email@email.com">
                 </form>
 
                 <p>Nickname</p>
@@ -68,7 +68,7 @@
                 </form>
 
 
-                  <p>
+                  <p style="margin-top: -5px">
                       <input type="checkbox" class="checkbox-button">I accept the terms and conditions of the User Agreement
                   </p>
 

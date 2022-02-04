@@ -32,7 +32,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style_login.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style_login.css ">
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
 
     <title>LOGIN PAGE</title>
@@ -45,7 +45,7 @@
 
         <div class = "container-right">
             <div class="login-form">
-                <p style="font-size: 30px">LOG IN</p>
+                <p style="font-size: 20px">LOG IN</p>
                 <p>Email</p>
                 <form class="login" action="login" method="POST">
                     <div class="messages">
@@ -76,7 +76,7 @@
                     function renderButton() {
                         gapi.signin2.render('my-signin2', {
                             'scope': 'profile email',
-                            'width': 240,
+                            'width': 50,
                             'height': 50,
                             'longtitle': true,
                             'theme': 'dark',

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,29 +9,29 @@
         <div class="header">
             <div class="upper-header">
                 <div class="logo">LIVE<span class="colortext">HUB</span></div>
-                <div class="primary-list">
-                    <ul>
-                        <li>MAIN</li>
-                        <li>POPULAR</li>
-                        <li>RECENT</li>
-                    </ul>
-                </div>
+<!--                <div class="primary-list">-->
+<!--                    <ul>-->
+<!--                        <li>MAIN</li>-->
+<!--                        <li>POPULAR</li>-->
+<!--                        <li>RECENT</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
             </div>
             <div class="lower-header">
                 <div class="secondary-list">
                     <ul>
-                        <li>All flows</li>
-                        <li>Development</li>
-                        <li>Design</li>
-                        <li>Administration</li>
-                        <li>Sci-fi</li>
+                        <li><a href="main_page">All flows</a></li>
+                        <li><a href="development">Development</a></li>
+                        <li><a href="design">Design</a></li>
+                        <li><a href="administration">Administration</a></li>
+                        <li><a href="sci_fi">Sci-fi</a></li>
                     </ul>
                 </div>
                 <div class="img_buttons">
-                    <img src="public/img/search_icon.png" width="30" height="30">
+                    <img src="public/img/search_icon.png" width="22" height="22">
 <!--                </div>-->
 <!--                <div class="img_buttons">-->
-                    <img src="public/img/profile_icon.png" width="32" height="32">
+                    <img src="public/img/profile_icon.png" width="26" height="26">
                 </div>
             </div>
         </div>
@@ -56,7 +55,9 @@
                 <div class="add">
                     <div>Advertisement</div>
                 </div>
-                <div class="reading_right_now"></div>
+                <div class="reading_right_now">
+                    <div>Reading right now</div>
+                </div>
             </div>
         </div>
         <div class="footer"></div>
