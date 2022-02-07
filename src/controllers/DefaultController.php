@@ -13,11 +13,10 @@ class DefaultController extends AppController {
     {
         $this->render('registration');
     }
-
-    public function main_page()
-    {
-        $this->render('main_page');
-    }
+//    public function main_page()
+//    {
+//        $this->render('main_page');
+//    }
 
     public function development()
     {
@@ -38,4 +37,5 @@ class DefaultController extends AppController {
     {
         $this->render('sci_fi');
     }
+
 }

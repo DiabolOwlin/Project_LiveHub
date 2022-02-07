@@ -46,7 +46,6 @@
         <div class = "container-right">
             <div class="login-form">
                 <p style="font-size: 20px">LOG IN</p>
-                <p>Email</p>
                 <form class="login" action="login" method="POST">
                     <div class="messages">
                         <?php
@@ -57,6 +56,7 @@
                         }
                         ?>
                     </div>
+                    <p>Email</p>
                     <input name="email" type="text" placeholder="email@email.com">
                     <p>Password</p>
                     <input name="password" type="password" placeholder="password">

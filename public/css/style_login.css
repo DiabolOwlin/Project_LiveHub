@@ -25,10 +25,11 @@ body {
     /*border: 2px solid black;*/
     margin-top: 30px;
     width: 350px;
-    height: 450px;
+    height: 470px;
     background-color: white;
     box-shadow: 2px 2px 1px 1px #9dacb0 ;
 }
+
 .signup-area{
     width: 350px;
     height: 50px;
@@ -95,6 +96,16 @@ a{
 a:hover{
     color: #2c364a;
     text-decoration: underline;
+}
+
+.messages{
+    display: flex;
+    justify-content: center;
+    color: #0B5D71;
+    margin-left: 20px;
+    font-family: Calibri, serif;
+    font-weight: bold;
+
 }
 
 /*.login-container {*/

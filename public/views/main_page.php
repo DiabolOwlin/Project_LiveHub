@@ -29,9 +29,37 @@
                 </div>
                 <div class="img_buttons">
                     <img src="public/img/search_icon.png" width="22" height="22">
-<!--                </div>-->
-<!--                <div class="img_buttons">-->
-                    <img src="public/img/profile_icon.png" width="26" height="26">
+                    <div class="dropdown">
+                        <button onclick="user_menu()" class="dropbtn"><img src="public/img/profile_icon.png" width="26" height="26"></button>
+                        <div id="user_dropdown" class="dropdown-content">
+                            <a href="#home">Settings</a>
+                            <a href="#about">Add an article</a>
+                            <a href="#contact">Log out</a>
+                        </div>
+                    </div>
+
+                    <script>
+                        /* When the user clicks on the button,
+                        toggle between hiding and showing the dropdown content */
+                        function user_menu() {
+                            document.getElementById("user_dropdown").classList.toggle("show");
+                        }
+
+                        // Close the dropdown if the user clicks outside of it
+                        window.onclick = function(event) {
+                            if (!event.target.matches('.dropbtn')) {
+
+                                var dropdowns = document.getElementsByClassName("dropdown-content");
+                                var i;
+                                for (i = 0; i < dropdowns.length; i++) {
+                                    var openDropdown = dropdowns[i];
+                                    if (openDropdown.classList.contains('show')) {
+                                        openDropdown.classList.remove('show');
+                                    }
+                                }
+                            }
+                        }
+                    </script>
                 </div>
             </div>
         </div>
