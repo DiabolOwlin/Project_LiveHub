@@ -172,12 +172,12 @@ body {
 }
 
 .article {
-    margin-top: 15px;
+    /*margin-top: 15px;*/
     font-family: Calibri, serif;
-    height: 1000px;!important;
+    /*height: 1000px;!important;*/
     width: 800px;
-    background-color: white;
-    /*box-shadow: 0 2px 2px gray;*/
+    /*background-color: white;*/
+    /*border: 2px solid black;*/
 }
 .column {
     display: flex;
@@ -225,4 +225,52 @@ a{
 a:hover{
     color: #2c364a;
     text-decoration: underline;
+}
+
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+.articles{
+
+}
+.each_article {
+    max-width: 850px;
+    margin-top: 1em;
+    height: 100%;
+    /*border: 2px solid red;*/
+    background-color: white;
+}
+.articles > * {
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.articles img{
+    height: 100%;
+    max-width: 600px;
+}
+
+/*.articles > div {*/
+/*    height: 400px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+section.article-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.article-form > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-section > i:hover {
+    cursor: pointer;
 }

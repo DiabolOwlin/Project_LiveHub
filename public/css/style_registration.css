@@ -40,7 +40,7 @@ body {
     /*border: 2px solid black;*/
     margin-top: 15px;
     width: 350px;
-    height: 580px;
+    height: 740px;
     background-color: white;
 
     box-shadow: 2px 2px 3px 1px #9dacb0;
@@ -55,12 +55,12 @@ p {
 }
 
 .input {
+
     margin-top: -20px;
     margin-left: 6%;
     width: 82%;
     height: 20px;
     padding: 10px 10px;
-    border: 1px solid black;
     font-size: 16px;
     color: #0B5D71;
 }
@@ -90,7 +90,9 @@ p {
 
 
 h1.logo {
-    text-align: center;
+    position: fixed;
+    left:200px;
+    bottom:200px;
     color: #0B5D71;
     font-family: Calibri, serif;
     font-size: 72px;
@@ -110,6 +112,13 @@ a {
 a:hover {
     color: #2c364a;
     text-decoration: underline;
+}
+
+.no-valid {
+    border: 1px solid red;
+    border-radius: 5px;
+    box-shadow: 0 0 0.2em red;
+    outline: none;
 }
 
 /*.login-container {*/

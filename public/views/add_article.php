@@ -2,7 +2,15 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style_add_article.css">
-    <title>MAIN PAGE</title>
+    <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tiny.cloud/1/g6ra4aj091yy63zd2m43j98jqr9wyu22zd2r06z0c0f519d0/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea'
+        });
+    </script>
+    <title>ADD AN ARTICLE</title>
 </head>
 <body>
     <div class="main-container">
@@ -37,9 +45,9 @@
         </div>
         <div class="content">
             <div class="feed">
-                <section class="project-form">
-                    <p>UPLOAD</p>
-                    <form action="addProject" method="POST" ENCTYPE="multipart/form-data">
+                <section class="article-form">
+                    <p>Add an article</p>
+                    <form action="add_article" method="POST" ENCTYPE="multipart/form-data">
                         <div class="messages">
                             <?php
                             if(isset($messages)){
@@ -49,10 +57,15 @@
                             }
                             ?>
                         </div>
-                        <div class="project_form">
+                        <div class="article_form">
                             <div><input name="title" type="text" placeholder="title"></div>
-                            <div><textarea name="description" rows=5 placeholder="description"></textarea></div>
-                            <div><button type="submit">send</button></div>
+                            <div><input type="file" name="file"></div>
+                            <div><textarea id="mytextarea" name="description" placeholder="description"></textarea></div>
+<!--                            <div><input name="title" type="text" placeholder="title"></div>-->
+<!--                            <div><textarea name="description" rows=5 placeholder="description"></textarea></div>-->
+
+                            <div><button type="submit">Submit</button></div>
+
                         </div>
                     </form>
                 </section>

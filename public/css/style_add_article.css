@@ -105,29 +105,54 @@ img {
     margin-top: 20px;
     margin-left: 100px;
     width: 1000px;
-    height: 500px;
+    height: 100%;
     background-color: white;
     /*border: 1px solid red;*/
 }
 
 p {
+
     font-size: 30px;
     font-family: Calibri, serif;
     color: #0B5D71;
     font-weight: bold;
+    margin: 1em;
 }
 
-.project-form {
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
+/*.project-form {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
+
+
+
+button {
+    background: #0B5D71;
+    box-shadow: 0px 3px 3px #00000029;
+    border-radius: 5px;
+    width: 20%;
+    border: none;
+    color: white;
+    margin: 1em;
+    line-height: 2.5em;
 }
 
-
-.project-form input[name="title"]{
-    width:200px;
+input,
+textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 1em;
+    margin: 1em;
+    width: 90%;
 }
 
+input[name='file']{
+    border-bottom: 0px;
+}
+textarea {
+    min-height: 500px;
+}
 
 
 a{
@@ -138,4 +163,15 @@ a{
 a:hover{
     color: #2c364a;
     text-decoration: underline;
+}
+
+section.article-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.article-form>form {
+    display: flex;
+    flex-direction: column;
 }

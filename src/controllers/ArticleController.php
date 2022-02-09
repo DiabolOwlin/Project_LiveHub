@@ -21,16 +21,11 @@ class ArticleController extends AppController {
 
     public function main_page()
     {
-        $this->render('main_page');
+        $articles = $this->articleRepository->get_articles();
+        $this->render('main_page', ['articles' => $articles]);
     }
 
     public function add_article()
-    {
-        $this->render('add_article');
-    }
-
-
-    public function addArticle()
     {
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
             move_uploaded_file(
@@ -39,12 +34,31 @@ class ArticleController extends AppController {
             );
 
             // TODO create new project object and save it in database
-            $article = new Article($_POST['title'], $_POST['description'], $_FILES['file']['name']);
-            $this->articleRepository->addArticle($article);
+            $article = new Article($_POST['title'], $_FILES['file']['name'], $_POST['description']);
+            $this->articleRepository->add_article($article);
 
-            return $this->render('main_page', ['messages' => $this->message]);
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/main_page");
+
+            return $this->render('main_page', [
+                'messages' => $this->message,
+                'articles' => $this->articleRepository->get_articles()
+            ]);
         }
-        return $this->render('add-article', ['messages' => $this->message]);
+
+        return $this->render('add_article', ['messages' => $this->message]);
+
+
+    }
+
+    public function like(int $id) {
+        $this->articleRepository->like($id);
+        http_response_code(200);
+    }
+
+    public function dislike(int $id) {
+        $this->articleRepository->dislike($id);
+        http_response_code(200);
     }
 
     private function validate(array $file): bool
@@ -61,4 +75,3 @@ class ArticleController extends AppController {
         return true;
     }
 }
-

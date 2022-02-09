@@ -14,7 +14,7 @@ Router::get('administration', 'DefaultController');
 Router::get('sci_fi', 'DefaultController');
 
 Router::get('main_page', 'ArticleController');
-Router::get('add_article', 'ArticleController');
+Router::post('add_article', 'ArticleController');
 
 Router::post('login', 'SecurityController');
 

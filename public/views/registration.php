@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style_registration.css">
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title>REGISTRATION PAGE</title>
 </head>
 <body>
@@ -43,41 +43,37 @@
                 </script>
 
                 <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-
-
-                <p>Email</p>
                 <form>
+                    <div class="messages">
+                        <?php
+                        if(isset($messages)){
+                            foreach($messages as $message) {
+                                echo $message;
+                            }
+                        }
+                        ?>
+                    </div>
+                    <p>Email</p>
+                    <input name="email" type="text" class="input" placeholder="email@email.com">
+                    <p>Nickname</p>
+                    <input name="nickname" type="text" class="input" placeholder="nickname">
+                    <p>Password</p>
+                    <input name="password" type="password" class="input" placeholder="password">
+                    <input name="confirmedPassword" type="password" class="input" placeholder="confirm password" style="margin-top: 30px">
 
-                    <input type="email" id="email" name="email" class="input" placeholder="email@email.com">
+                    <p>Name</p>
+                    <input name="name" type="text" class="input" placeholder="name">
+
+                    <p>Surname</p>
+                    <input name="surname" type="text" class="input" placeholder="surname">
+
+                    <p style="margin-top: -5px">
+                        <input type="checkbox" class="checkbox-button">I accept the terms and conditions of the User Agreement
+                    </p>
+
+                    <input type="button" class="register-button" onclick="" value="Register">
                 </form>
-
-                <p>Nickname</p>
-                <form>
-
-                    <input type="text" class="input">
-                </form>
-
-                <p>Password</p>
-                <form>
-                    <input type="password" class="input">
-                </form>
-
-                <p>Password again</p>
-                <form>
-                    <input type="password" class="input">
-                </form>
-
-
-                  <p style="margin-top: -5px">
-                      <input type="checkbox" class="checkbox-button">I accept the terms and conditions of the User Agreement
-                  </p>
-
-
-                <input type="button" class="register-button" onclick="" value="Register">
-
             </div>
-
-
         </div>
     </div>
 

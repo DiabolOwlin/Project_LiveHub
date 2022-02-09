@@ -32,12 +32,11 @@
                     <div class="dropdown">
                         <button onclick="user_menu()" class="dropbtn"><img src="public/img/profile_icon.png" width="26" height="26"></button>
                         <div id="user_dropdown" class="dropdown-content">
-                            <a href="#home">Settings</a>
-                            <a href="#about">Add an article</a>
-                            <a href="#contact">Log out</a>
+                            <a href="settings">Settings</a>
+                            <a href="add_article">Add an article</a>
+                            <a href="log_out">Log out</a>
                         </div>
                     </div>
-
                     <script>
                         /* When the user clicks on the button,
                         toggle between hiding and showing the dropdown content */
@@ -76,7 +75,22 @@
                     </div>
                 </div>
                 <div class="article">
-                <!--                    paste all articles that db has-->
+                    <article class="articles">
+                        <?php foreach ($articles as $article): ?>
+                                <div class="each_article">
+                                    <div><?= $article->getAuthor(); ?>, <?=$article->getCreatedAt() ?></div>
+                                    <div><h2><?= $article->getTitle(); ?></h2></div>
+                                    <div><img src="public/uploads/<?= $article->getImage(); ?>" alt=""></div>
+                                    <div><p><?= $article->getDescription(); ?></p><br></div>
+<!--                                    <div class="social-section">-->
+<!--                                        <i class="fas fa-heart"> --><?//= $article->getLike(); ?><!--</i>-->
+<!--                                        <i class="fas fa-minus-square"> --><?//= $article->getDislike(); ?><!--</i>-->
+<!--                                    </div>-->
+                                </div>
+                        <?php endforeach; ?>
+                    </article>
+                        <!--                        if(isset($articles) && is_array($articles)) foreach ($articles as $article) {-->
+
                 </div>
             </div>
             <div class="column">
@@ -91,3 +105,17 @@
         <div class="footer"></div>
     </div>
 </body>
+
+<template id="article-template">
+    <div id="">
+        <img src="">
+        <div>
+            <h2>title</h2>
+            <p>description</p>
+            <div class="social-section">
+                <i class="fas fa-heart"> 0</i>
+                <i class="fas fa-minus-square"> 0</i>
+            </div>
+        </div>
+    </div>
+</template>
