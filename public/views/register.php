@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style_registration.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style_register.css">
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title>REGISTRATION PAGE</title>
@@ -43,7 +43,7 @@
                 </script>
 
                 <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-                <form>
+                <form class="register" action="register" method="POST">
                     <div class="messages">
                         <?php
                         if(isset($messages)){
@@ -71,7 +71,7 @@
                         <input type="checkbox" class="checkbox-button">I accept the terms and conditions of the User Agreement
                     </p>
 
-                    <input type="button" class="register-button" onclick="" value="Register">
+                    <button type="submit" class="register-button">Register</button>
                 </form>
             </div>
         </div>

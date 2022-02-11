@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style_main_page.css">
+    <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>MAIN PAGE</title>
 </head>
 <body>
@@ -27,38 +28,43 @@
                         <li><a href="sci_fi">Sci-fi</a></li>
                     </ul>
                 </div>
-                <div class="img_buttons">
-                    <img src="public/img/search_icon.png" width="22" height="22">
-                    <div class="dropdown">
-                        <button onclick="user_menu()" class="dropbtn"><img src="public/img/profile_icon.png" width="26" height="26"></button>
-                        <div id="user_dropdown" class="dropdown-content">
-                            <a href="settings">Settings</a>
-                            <a href="add_article">Add an article</a>
-                            <a href="log_out">Log out</a>
-                        </div>
+                <div class="options">
+                    <div class="search-bar">
+                        <input placeholder="search article">
+                        <img src="public/img/search_icon.png" width="22" height="22">
                     </div>
-                    <script>
-                        /* When the user clicks on the button,
-                        toggle between hiding and showing the dropdown content */
-                        function user_menu() {
-                            document.getElementById("user_dropdown").classList.toggle("show");
-                        }
+                    <div class="img_buttons">
+                        <div class="dropdown">
+                            <button onclick="user_menu()" class="dropbtn"><img src="public/img/profile_icon.png" width="26" height="26"></button>
+                            <div id="user_dropdown" class="dropdown-content">
+                                <a href="settings">Settings</a>
+                                <a href="add_article">Add an article</a>
+                                <a href="log_out">Log out</a>
+                            </div>
+                        </div>
+                        <script>
+                            /* When the user clicks on the button,
+                            toggle between hiding and showing the dropdown content */
+                            function user_menu() {
+                                document.getElementById("user_dropdown").classList.toggle("show");
+                            }
 
-                        // Close the dropdown if the user clicks outside of it
-                        window.onclick = function(event) {
-                            if (!event.target.matches('.dropbtn')) {
+                            // Close the dropdown if the user clicks outside of it
+                            window.onclick = function(event) {
+                                if (!event.target.matches('.dropbtn')) {
 
-                                var dropdowns = document.getElementsByClassName("dropdown-content");
-                                var i;
-                                for (i = 0; i < dropdowns.length; i++) {
-                                    var openDropdown = dropdowns[i];
-                                    if (openDropdown.classList.contains('show')) {
-                                        openDropdown.classList.remove('show');
+                                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                                    var i;
+                                    for (i = 0; i < dropdowns.length; i++) {
+                                        var openDropdown = dropdowns[i];
+                                        if (openDropdown.classList.contains('show')) {
+                                            openDropdown.classList.remove('show');
+                                        }
                                     }
                                 }
                             }
-                        }
-                    </script>
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,11 +83,11 @@
                 <div class="article">
                     <article class="articles">
                         <?php foreach ($articles as $article): ?>
-                                <div class="each_article">
-                                    <div><?= $article->getAuthor(); ?>, <?=$article->getCreatedAt() ?></div>
-                                    <div><h2><?= $article->getTitle(); ?></h2></div>
-                                    <div><img src="public/uploads/<?= $article->getImage(); ?>" alt=""></div>
-                                    <div><p><?= $article->getDescription(); ?></p><br></div>
+                                <div class="each_article" id="article-1">
+                                    <h4><?= $article->getAuthor(); ?>, <?=$article->getCreatedAt() ?></h4>
+                                    <h2><?= $article->getTitle(); ?></h2>
+                                    <img src="public/uploads/<?= $article->getImage(); ?>" alt="">
+                                    <<p><?= $article->getDescription(); ?></p><br>
 <!--                                    <div class="social-section">-->
 <!--                                        <i class="fas fa-heart"> --><?//= $article->getLike(); ?><!--</i>-->
 <!--                                        <i class="fas fa-minus-square"> --><?//= $article->getDislike(); ?><!--</i>-->
@@ -107,15 +113,14 @@
 </body>
 
 <template id="article-template">
-    <div id="">
-        <img src="">
-        <div>
-            <h2>title</h2>
-            <p>description</p>
-            <div class="social-section">
-                <i class="fas fa-heart"> 0</i>
-                <i class="fas fa-minus-square"> 0</i>
-            </div>
-        </div>
+    <div class="each_article" id="article-1">
+        <h4>author</h4>
+        <h2>title</h2>
+        <img src="" alt="">
+        <p>description</p><br>
+        <!--                                    <div class="social-section">-->
+        <!--                                        <i class="fas fa-heart"> --><?//= $article->getLike(); ?><!--</i>-->
+        <!--                                        <i class="fas fa-minus-square"> --><?//= $article->getDislike(); ?><!--</i>-->
+        <!--                                    </div>-->
     </div>
 </template>

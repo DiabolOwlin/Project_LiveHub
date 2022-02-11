@@ -37,7 +37,7 @@ class ArticleRepository extends Repository
         ');
 
         //TODO you should get this value from logged user session
-        $assignedById = 1;
+        $assignedById = 4;
 
         $stmt->execute([
             $article->getTitle(),
@@ -54,7 +54,7 @@ class ArticleRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM articles a RIGHT JOIN users u on a.id_assigned_by = u.id;
+            SELECT * FROM articles a LEFT JOIN users u on a.id_assigned_by = u.id;
         ');
         $stmt->execute();
         $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -75,6 +75,20 @@ class ArticleRepository extends Repository
         return $result;
     }
 
+    public function getArticleByTitle(string $searchString)
+    {
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM articles WHERE LOWER(title) LIKE :search OR LOWER(description) LIKE :search
+        ');
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    
     public function like(int $id) {
         $stmt = $this->database->connect()->prepare('
             UPDATE projects SET "like" = "like" + 1 WHERE id = :id

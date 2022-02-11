@@ -91,7 +91,7 @@
             </div>
 
             <div class="signup-area">
-                <p><a href="registration">Haven`t got an account yet? Sign up</a></p>
+                <p><a href="register">Haven`t got an account yet? Sign up</a></p>
             </div>
         </div>
     </div>

@@ -1,23 +1,28 @@
 <?php
 
 class User {
-    private $email;
+    private $username;
     private $password;
+    private $email;
     private $name;
     private $surname;
-    private $phone;
+
 
     public function __construct(
-        string $email,
+        string $username,
         string $password,
+        string $email,
         string $name,
         string $surname
+
     ) {
-        $this->email = $email;
+        $this->username = $username;
         $this->password = $password;
+        $this->email = $email;
         $this->name = $name;
         $this->surname = $surname;
     }
+
 
     public function getEmail(): string
     {
@@ -49,13 +54,9 @@ class User {
         $this->surname = $surname;
     }
 
-    public function getPhone()
+    public function getUsername(): string
     {
-        return $this->phone;
+        return $this->username;
     }
 
-    public function setPhone($phone): void
-    {
-        $this->phone = $phone;
-    }
 }

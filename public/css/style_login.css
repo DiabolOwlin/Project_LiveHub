@@ -78,8 +78,8 @@ input{
 
 h1.logo {
     position: fixed;
-    left: 200px;
-    bottom: 200px;
+    left: 40vh;
+    bottom: 40vh;
     color: #0B5D71;
     font-family: Calibri, serif;
     font-size: 72px;
