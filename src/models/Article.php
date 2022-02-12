@@ -1,6 +1,7 @@
 <?php
 
 class Article {
+    private $id;
     private $title;
     private $image;
     private $description;
@@ -12,13 +13,15 @@ class Article {
 
 
 
-    public function __construct($title, $image, $description, $like = 0, $dislike = 0, $author = null, $created_at = null)
+    public function __construct($title, $image, $description, $like = 0, $dislike = 0, $id = null, $author = null, $created_at = null)
     {
+
         $this->title = $title;
         $this->image = $image;
         $this->description = $description;
         $this->like = $like;
         $this->dislike = $dislike;
+        $this->id = $id;
         $this->author = $author;
         $this->created_at = $created_at;
 
@@ -29,7 +32,7 @@ class Article {
         return $this->title;
     }
 
-    public function setTitle($title)
+    public function setTitle($title): void
     {
         $this->title = $title;
     }
@@ -39,7 +42,7 @@ class Article {
         return $this->image;
     }
 
-    public function setImage($image)
+    public function setImage($image): void
     {
         $this->image = $image;
     }
@@ -49,37 +52,45 @@ class Article {
         return $this->description;
     }
 
-    public function setDescription($description)
+    public function setDescription($description): void
     {
         $this->description = $description;
     }
 
-    public function getLike(): int
+    public function getLike()
     {
         return $this->like;
     }
 
-    public function setLike(int $like): void
+    public function setLike($like): void
     {
         $this->like = $like;
     }
 
-    public function getDislike(): int
+    public function getDislike()
     {
         return $this->dislike;
     }
 
-    public function setDislike(int $dislike): void
+    public function setDislike($dislike): void
     {
         $this->dislike = $dislike;
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
 
     public function getAuthor()
     {
         return $this->author;
     }
-
 
     public function setAuthor($author): void
     {
@@ -90,7 +101,6 @@ class Article {
     {
         return $this->created_at;
     }
-
 
     public function setCreatedAt($created_at): void
     {

@@ -37,9 +37,8 @@ function createArticle(article) {
     console.log(clone)
     const div = clone.querySelector("div");
     div.id = article.id;
-
     // const author_time = clone.querySelector("h4")
-    // author_time.innerHTML = article
+    // author_time =
     const image = clone.querySelector("img");
     image.src = `/public/uploads/${article.image}`;
     const title = clone.querySelector("h2");

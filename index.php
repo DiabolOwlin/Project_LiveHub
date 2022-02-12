@@ -10,6 +10,8 @@ Router::get('development', 'DefaultController');
 Router::get('design', 'DefaultController');
 Router::get('administration', 'DefaultController');
 Router::get('sci_fi', 'DefaultController');
+Router::get('like', 'ArticleController');
+Router::get('dislike', 'ArticleController');
 
 Router::get('main_page', 'ArticleController');
 Router::post('add_article', 'ArticleController');

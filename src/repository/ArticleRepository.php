@@ -66,6 +66,7 @@ class ArticleRepository extends Repository
                 $article['description'],
                 $article['likes'],
                 $article['dislikes'],
+                $article['a.id'],
                 $article['username'],
                 $article['created_at']
 

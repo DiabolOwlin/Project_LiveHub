@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style_main_page.css">
+
+    <script src="https://kit.fontawesome.com/2755cb3561.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <title>MAIN PAGE</title>
 </head>
@@ -83,20 +85,18 @@
                 <div class="article">
                     <article class="articles">
                         <?php foreach ($articles as $article): ?>
-                                <div class="each_article" id="article-1">
+                                <div id="<?= $article->getId(); ?>" class="each_article">
                                     <h4><?= $article->getAuthor(); ?>, <?=$article->getCreatedAt() ?></h4>
                                     <h2><?= $article->getTitle(); ?></h2>
                                     <img src="public/uploads/<?= $article->getImage(); ?>" alt="">
-                                    <<p><?= $article->getDescription(); ?></p><br>
-<!--                                    <div class="social-section">-->
-<!--                                        <i class="fas fa-heart"> --><?//= $article->getLike(); ?><!--</i>-->
-<!--                                        <i class="fas fa-minus-square"> --><?//= $article->getDislike(); ?><!--</i>-->
-<!--                                    </div>-->
+                                    <p><?= $article->getDescription(); ?></p><br>
+                                    <div class="social-section">
+                                        <i class="fas fa-heart"> <?= $article->getLike(); ?></i>
+                                        <i class="fas fa-minus-square"> <?= $article->getDislike(); ?></i>
+                                    </div>
                                 </div>
                         <?php endforeach; ?>
                     </article>
-                        <!--                        if(isset($articles) && is_array($articles)) foreach ($articles as $article) {-->
-
                 </div>
             </div>
             <div class="column">
@@ -113,14 +113,14 @@
 </body>
 
 <template id="article-template">
-    <div class="each_article" id="article-1">
-        <h4>author</h4>
+    <div class="each_article" id="">
+
         <h2>title</h2>
         <img src="" alt="">
         <p>description</p><br>
-        <!--                                    <div class="social-section">-->
-        <!--                                        <i class="fas fa-heart"> --><?//= $article->getLike(); ?><!--</i>-->
-        <!--                                        <i class="fas fa-minus-square"> --><?//= $article->getDislike(); ?><!--</i>-->
-        <!--                                    </div>-->
+        <div class="social-section">
+            <i class="fas fa-heart">like</i>
+            <i class="fas fa-minus-square">dislike</i>
+        </div>
     </div>
 </template>
