@@ -187,7 +187,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 75%;
+    width: 70%;
     height: 100%;
     /*border: 1px solid red;*/
 }
@@ -196,7 +196,7 @@ body {
     margin-top: 15px;
     font-family: Calibri, serif;
     height: 100px;
-    width: 88%;
+    width: 90%;
     background-color: white;
     /*box-shadow: 0 2px 2px gray;*/
 }
@@ -218,7 +218,7 @@ body {
     /*margin-top: 15px;*/
     font-family: Calibri, serif;
     /*height: 1000px;!important;*/
-    width: 88%;
+    width: 90%;
     /*background-color: white;*/
     /*border: 2px solid black;*/
 }
@@ -226,7 +226,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 25%;
+    width: 30%;
     height: 100%;
     /*border: 1px solid black;*/
 }
@@ -235,16 +235,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width:60%;
+    width:80%;
     /*box-shadow: 0 2px 2px gray;*/
     margin-top: 15px;
     margin-left: 10px;
     background-color: white;
     height:400px;!important;
+    color: #0B5D71;
 }
 
 .reading_right_now {
-    width:60%;
+    width:80%;
     /*box-shadow: 0 2px 2px gray;*/
     margin-top: 15px;
     margin-left: 10px;
@@ -258,6 +259,7 @@ body {
     margin-top: 10px;
     font-family: Calibri, serif;
     font-weight: bold;
+    color: #0B5D71;
 }
 
 a{
@@ -277,7 +279,7 @@ section {
 }
 
 .articles{
-
+    color: #0B5D71;
 }
 .each_article {
     max-width: 85vw;
@@ -293,7 +295,8 @@ section {
 }
 .articles img{
     height: 100%;
-    max-width: 600px;
+    max-width: 730px;
+
 }
 
 /*.articles > div {*/
@@ -314,7 +317,32 @@ section.article-form {
     flex-direction: column;
 }
 
+.social-section {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.social-section > i{
+    margin-right: 1em;
+}
 .social-section > i:hover {
     cursor: pointer;
+}
+
+.read_more {
+    background-color: white;
+    color: #0B5D71;
+    /*border: none;*/
+    border: 1px solid #0B5D71;
+    border-radius: 3px;
+    height:35px;
+    width:100px;
+    font-family: Calibri, serif;
+
+}
+
+.read_more:hover {
+    transition: 0.3s;
+    background-color: #0B5D71;
+    color: white;
 }
 

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style_search.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style_article.css">
     <script src="https://kit.fontawesome.com/723297a893.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
-    <script type="text/javascript" src="./public/js/statistics.js" defer></script>
-    <title>Search</title>
+    <title><?php $article->getTitle(); ?></title>
 </head>
 <body>
     <div class="main-container">

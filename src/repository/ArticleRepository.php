@@ -54,19 +54,21 @@ class ArticleRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM articles a LEFT JOIN users u on a.id_assigned_by = u.id;
+            SELECT * FROM users u RIGHT JOIN articles a on u.id = a.id_assigned_by; 
+
         ');
+
         $stmt->execute();
         $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
         foreach ($articles as $article) {
             $result[] = new Article(
+
                 $article['title'],
                 $article['image'],
                 $article['description'],
                 $article['likes'],
                 $article['dislikes'],
-                $article['a.id'],
+                $article['id'],
                 $article['username'],
                 $article['created_at']
 
@@ -92,7 +94,7 @@ class ArticleRepository extends Repository
     
     public function like(int $id) {
         $stmt = $this->database->connect()->prepare('
-            UPDATE projects SET "like" = "like" + 1 WHERE id = :id
+            UPDATE articles SET likes = likes + 1 WHERE id = :id
          ');
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
@@ -101,7 +103,7 @@ class ArticleRepository extends Repository
 
     public function dislike(int $id) {
         $stmt = $this->database->connect()->prepare('
-            UPDATE projects SET dislike = dislike + 1 WHERE id = :id
+            UPDATE articles SET dislikes = dislikes + 1 WHERE id = :id
          ');
 
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);

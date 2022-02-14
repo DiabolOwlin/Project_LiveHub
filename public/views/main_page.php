@@ -5,6 +5,7 @@
 
     <script src="https://kit.fontawesome.com/2755cb3561.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
+    <script type="text/javascript" src="./public/js/statistics.js" defer></script>
     <title>MAIN PAGE</title>
 </head>
 <body>
@@ -86,13 +87,16 @@
                     <article class="articles">
                         <?php foreach ($articles as $article): ?>
                                 <div id="<?= $article->getId(); ?>" class="each_article">
-                                    <h4><?= $article->getAuthor(); ?>, <?=$article->getCreatedAt() ?></h4>
-                                    <h2><?= $article->getTitle(); ?></h2>
-                                    <img src="public/uploads/<?= $article->getImage(); ?>" alt="">
-                                    <p><?= $article->getDescription(); ?></p><br>
-                                    <div class="social-section">
-                                        <i class="fas fa-heart"> <?= $article->getLike(); ?></i>
-                                        <i class="fas fa-minus-square"> <?= $article->getDislike(); ?></i>
+                                    <div>
+                                        <h4><?= $article->getAuthor(); ?>, <?=$article->getCreatedAt() ?></h4>
+                                        <h2><?= $article->getTitle(); ?></h2>
+                                        <img src="public/uploads/<?= $article->getImage(); ?>" alt="">
+                                        <p><?= substr($article->getDescription(),0,500).'...'; ?></p><br>
+                                        <button class="read_more">Read more</button>
+                                        <div class="social-section">
+                                            <i class="fas fa-heart"> <?= $article->getLike(); ?></i>
+                                            <i class="fas fa-minus-square"> <?= $article->getDislike(); ?></i>
+                                        </div>
                                     </div>
                                 </div>
                         <?php endforeach; ?>

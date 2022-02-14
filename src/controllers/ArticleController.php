@@ -64,8 +64,6 @@ class ArticleController extends AppController {
         }
     }
 
-
-
     public function like(int $id) {
         $this->articleRepository->like($id);
         http_response_code(200);

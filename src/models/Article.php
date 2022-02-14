@@ -1,12 +1,12 @@
 <?php
 
 class Article {
-    private $id;
     private $title;
     private $image;
     private $description;
     private $like;
     private $dislike;
+    private $id;
     private $author;
     private $created_at;
 
