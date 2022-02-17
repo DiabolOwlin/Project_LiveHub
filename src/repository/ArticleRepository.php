@@ -37,13 +37,13 @@ class ArticleRepository extends Repository
         ');
 
         //TODO you should get this value from logged user session
-        $assignedById = 4;
+        $assignedById = 7;
 
         $stmt->execute([
             $article->getTitle(),
             $article->getImage(),
             $article->getDescription(),
-            $date->format('d/m/Y H:i'),
+            $date->format('Y-m-d H:i'),
             $assignedById
 
         ]);
@@ -54,7 +54,7 @@ class ArticleRepository extends Repository
         $result = [];
 
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM users u RIGHT JOIN articles a on u.id = a.id_assigned_by; 
+            SELECT * FROM users u RIGHT JOIN articles a on u.id = a.id_assigned_by ORDER BY created_at DESC;  
 
         ');
 

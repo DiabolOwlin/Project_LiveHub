@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style_main_page.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style_media_queries_main_page.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <script src="https://kit.fontawesome.com/2755cb3561.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./public/js/search.js" defer></script>
     <script type="text/javascript" src="./public/js/statistics.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <title>MAIN PAGE</title>
 </head>
 <body>
@@ -13,13 +17,6 @@
         <div class="header">
             <div class="upper-header">
                 <div class="logo">LIVE<span class="colortext">HUB</span></div>
-<!--                <div class="primary-list">-->
-<!--                    <ul>-->
-<!--                        <li>MAIN</li>-->
-<!--                        <li>POPULAR</li>-->
-<!--                        <li>RECENT</li>-->
-<!--                    </ul>-->
-<!--                </div>-->
             </div>
             <div class="lower-header">
                 <div class="secondary-list">
@@ -42,7 +39,7 @@
                             <div id="user_dropdown" class="dropdown-content">
                                 <a href="settings">Settings</a>
                                 <a href="add_article">Add an article</a>
-                                <a href="log_out">Log out</a>
+                                <a href="login">Log out</a>
                             </div>
                         </div>
                         <script>
@@ -72,6 +69,10 @@
             </div>
         </div>
         <div class="content">
+            <div class="nav">
+                <a id="go_to_top"></a>
+                <a id="go_back"></a>
+            </div>
             <div class="feed">
                 <div class="menu">
                     <div class="menu-name">All flows</div>
@@ -108,12 +109,55 @@
                     <div>Advertisement</div>
                 </div>
                 <div class="reading_right_now">
-                    <div>Reading right now</div>
+                    <div class="rrn_title">Reading right now</div>
+                    <div class="rrn_articles">
+                        <?php foreach ($articles as $article): ?>
+                            <div id="<?= $article->getId(); ?>" class="rrn_each_article">
+                                <div>
+                                    <h4><?= $article->getTitle(); ?></h4>
+                                    <div class="social-section">
+                                        <i class="fas fa-heart"> <?= $article->getLike(); ?></i>
+                                        <i class="fas fa-minus-square"> <?= $article->getDislike(); ?></i>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="footer"></div>
     </div>
+
+    <script>
+        var btn_top = $('#go_to_top');
+        var btn_go_back = $('#go_back');
+        var pageYLabel = 0;
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 300) {
+                btn_top.addClass('show');
+                btn_go_back.removeClass('show');
+            } else {
+                btn_top.removeClass('show');
+                 btn_go_back.addClass('show');
+            }
+
+        });
+
+        btn_top.on('click', function(e) {
+            e.preventDefault();
+            pageYLabel = $(window).scrollTop();
+            $('html, body').animate({scrollTop:0}, '300');
+
+        });
+
+        btn_go_back.on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop:pageYLabel}, "slow");
+
+        })
+    </script>
 </body>
 
 <template id="article-template">

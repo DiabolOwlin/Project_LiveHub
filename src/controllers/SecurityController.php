@@ -21,7 +21,7 @@ class SecurityController extends AppController {
         }
 
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        $password = hash('sha256', $_POST['password']);
 
         $user = $this->userRepository->getUser($email);
 
@@ -37,7 +37,7 @@ class SecurityController extends AppController {
         if ($user->getPassword() !== $password) {
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
-
+        $UID = $_SESSION['id'];
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/main_page");
     }
@@ -59,8 +59,7 @@ class SecurityController extends AppController {
             return $this->render('register', ['messages' => ['Please provide proper password']]);
         }
 
-        //TODO try to use better hash function
-        $user = new User($username, md5($password), $email, $name, $surname);
+        $user = new User($username, hash('sha256', $password), $email, $name, $surname);
 
         $this->userRepository->addUser($user);
 

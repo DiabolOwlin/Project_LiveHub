@@ -6,7 +6,7 @@ require_once __DIR__.'/../repository/ArticleRepository.php';
 
 class ArticleController extends AppController {
 
-    const MAX_FILE_SIZE = 1024*1024;
+    const MAX_FILE_SIZE = 1024*1024*5;
     const SUPPORTED_TYPES = ['image/png', 'image/jpeg'];
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 
@@ -24,6 +24,30 @@ class ArticleController extends AppController {
         $articles = $this->articleRepository->get_articles();
         $this->render('main_page', ['articles' => $articles]);
     }
+
+    public function development()
+        {
+            $articles = $this->articleRepository->get_articles();
+            $this->render('development', ['articles' => $articles]);
+        }
+
+    public function administration()
+        {
+            $articles = $this->articleRepository->get_articles();
+            $this->render('administration', ['articles' => $articles]);
+        }
+
+    public function design()
+        {
+            $articles = $this->articleRepository->get_articles();
+            $this->render('design', ['articles' => $articles]);
+        }
+
+    public function sci_fi()
+        {
+            $articles = $this->articleRepository->get_articles();
+            $this->render('sci_fi', ['articles' => $articles]);
+        }
 
     public function add_article()
     {
