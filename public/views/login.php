@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style_login.css ">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-
+    <link rel="stylesheet" type="text/css" href="public/css/style_login.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style_login_media_queries.css">
     <title>LOGIN PAGE</title>
 </head>
 <body>
@@ -11,7 +10,6 @@
         <div class = "container-left">
             <h1 class="logo">LIVEHUB</h1>
         </div>
-
         <div class = "container-right">
             <div class="login-form">
                 <p style="font-size: 20px">LOG IN</p>
@@ -34,28 +32,28 @@
                 </form>
 
                 <p>Or log in with other services</p>
-                <div id="my-signin2"></div>
-                <script>
-                    function onSuccess(googleUser) {
-                        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-                    }
-                    function onFailure(error) {
-                        console.log(error);
-                    }
-                    function renderButton() {
-                        gapi.signin2.render('my-signin2', {
-                            'scope': 'profile email',
-                            'width': 50,
-                            'height': 50,
-                            'longtitle': true,
-                            'theme': 'dark',
-                            'onsuccess': onSuccess,
-                            'onfailure': onFailure
-                        });
-                    }
-                </script>
-
-                <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+<!--                <div id="my-signin2"></div>-->
+<!--                <script>-->
+<!--                    function onSuccess(googleUser) {-->
+<!--                        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());-->
+<!--                    }-->
+<!--                    function onFailure(error) {-->
+<!--                        console.log(error);-->
+<!--                    }-->
+<!--                    function renderButton() {-->
+<!--                        gapi.signin2.render('my-signin2', {-->
+<!--                            'scope': 'profile email',-->
+<!--                            'width': 50,-->
+<!--                            'height': 50,-->
+<!--                            'longtitle': true,-->
+<!--                            'theme': 'dark',-->
+<!--                            'onsuccess': onSuccess,-->
+<!--                            'onfailure': onFailure-->
+<!--                        });-->
+<!--                    }-->
+<!--                </script>-->
+<!---->
+<!--                <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>-->
 
             </div>
 

@@ -45,10 +45,10 @@ function createArticle(article) {
     title.innerHTML = article.title;
     const description = clone.querySelector("p");
     description.innerHTML = article.description;
-    // const like = clone.querySelector(".fa-heart");
-    // like.innerText = article.like;
-    // const dislike = clone.querySelector(".fa-minus-square");
-    // dislike.innerText = article.dislike;
+    const likes = clone.querySelector(".fa-heart");
+    likes.innerText = article.likes;
+    const dislikes = clone.querySelector(".fa-minus-square");
+    dislikes.innerText = article.dislikes;
 
     articleContainer.appendChild(clone);
 }

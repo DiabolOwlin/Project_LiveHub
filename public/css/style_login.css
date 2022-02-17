@@ -1,6 +1,7 @@
 body {
     background: #D7E6EA;
 }
+
 .container {
     height: 100%;
     display: flex;
@@ -10,6 +11,9 @@ body {
 
 .container-left {
     width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-right {
@@ -71,9 +75,7 @@ input{
 
 
 h1.logo {
-    position: fixed;
-    left: 40vh;
-    bottom: 40vh;
+    position: inherit;
     color: #0B5D71;
     font-family: Calibri, serif;
     font-size: 72px;

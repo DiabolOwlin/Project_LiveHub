@@ -19,9 +19,8 @@ body {
     flex-direction: column;
     z-index: 1001;
     box-shadow: 0 0 1px 1px lightgrey;
-
-
 }
+
 
 .upper-header {
     /*border: 2px solid green;*/
@@ -32,10 +31,19 @@ body {
     background-color: #0B5D71;
 
 }
+
+.fa-bars {
+    /*display: none;*/
+    visibility: hidden;
+    margin-left: 10px;
+    color: white;
+    font-size: 30px;
+}
+
 .logo {
     flex-direction: row;
     align-items: center;
-    margin-left:4em;
+    margin-left:2em;
     font-size: 30px;
     font-family: Calibri, serif;
     font-weight: bold;
@@ -72,13 +80,21 @@ body {
 /*}*/
 
 .secondary-list li {
-    display: inline;
+    display: inline-block;
     margin-right: 30px;
     font-family: Calibri, serif;
     font-size: 14px;
     color: #0B5D71;
     font-weight: bold;
 
+}
+
+.sidenav {
+    display: none;
+
+}
+.usr_nav_mobile {
+    display: none;
 }
 
 .options{
@@ -369,7 +385,6 @@ section {
 .articles img{
     height: 100%;
     max-width: 100%;
-
 }
 
 /*.articles > div {*/

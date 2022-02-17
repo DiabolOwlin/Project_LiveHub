@@ -1,31 +1,23 @@
-@media screen and (max-width: 848px){
-
-    .header{
-        position: fixed;
-    }
+@media screen and (max-width: 848px) {
 
     .upper-header{
         display: flex;
         justify-content: space-between;
     }
+
     .logo{
         font-size: 30px;
         margin-right: 1em;
-
-
     }
-    .lower-header {
 
-    }
     .fa-bars{
-        /*display: block;*/
         visibility: visible;
     }
-    .secondary-list li{
+
+    .secondary-list{
         display: none;
     }
 
-    /* The side navigation menu */
     .sidenav {
         display: block;
         height: 100%; /* 100% Full-height */
@@ -66,23 +58,6 @@
         margin-left: 50px;
     }
 
-    .options {
-        position: fixed;
-    }
-    .img_buttons {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .dropbtn{
-        display: none;
-    }
-
-    .usr_nav_mobile{
-        display: block;
-    }
-
     .rightSideNav {
         display: block;
         height: 100%; /* 100% Full-height */
@@ -97,21 +72,20 @@
         transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
     }
 
+    .options {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        right: 20px;
+    }
 
-    .nav{
+    .dropbtn{
         display: none;
     }
 
-    .menu{
-        display: none;
+    .usr_nav_mobile{
+        display: block;
     }
 
-    .column{
-        display: none;
-    }
 
-    .feed{
-        width: 100%;
-        margin-right: 5px;
-    }
 }

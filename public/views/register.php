@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style_register.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style_register_media_queries.css">
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title>REGISTRATION PAGE</title>

@@ -13,10 +13,11 @@ body {
 }
 
 .header {
+    position: fixed;
     width:100%;
     display: flex;
     flex-direction: column;
-    /*box-shadow: 0 1px 1px 1px gray;*/
+    box-shadow: 0 0 1px 1px lightgrey;
 
 }
 
@@ -27,12 +28,20 @@ body {
     flex-direction: row;
     align-items: center;
     background-color: #0B5D71;
-
 }
+
+.fa-bars {
+    /*display: none;*/
+    visibility: hidden;
+    margin-left: 10px;
+    color: white;
+    font-size: 30px;
+}
+
 .logo {
     flex-direction: row;
     align-items: center;
-    margin-left:110px;
+    margin-left:2em;
     font-size: 30px;
     font-family: Calibri, serif;
     font-weight: bold;
@@ -48,6 +57,7 @@ body {
     /*border: 2px solid red;*/
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     background-color: white;
 
@@ -55,6 +65,7 @@ body {
 
 .secondary-list {
     margin-left: 70px;
+    /*border: 1px solid green;*/
 
 }
 
@@ -67,30 +78,121 @@ body {
 /*}*/
 
 .secondary-list li {
-    display: inline;
+    display: inline-block;
     margin-right: 30px;
     font-family: Calibri, serif;
     font-size: 14px;
     color: #0B5D71;
     font-weight: bold;
+}
+
+.sidenav {
+    display: none;
 
 }
+.usr_nav_mobile {
+    display: none;
+}
+
+.options{
+    display: flex;
+    margin-right: 100px;
+
+}
+
+.search-bar {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 1px solid red;*/
+
+}
+
+.search-bar > input {
+    background: white;
+    border: none;
+    width: 80%;
+    height: 30px;
+    text-indent: 20px;
+    letter-spacing: 0.72px;
+    color: #0B5D71;
+    margin: 0;
+    font-family: Calibri, serif;
+}
+.search-bar > input:focus {
+    outline: none !important;
+}
+
+.search_result {
+    margin-top: 1em;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid green;*/
+
+}
+
 
 .img_buttons {
-    position: relative;
-    left: 70vh;
+    /*position: relative;*/
+    /*left: 30vw;*/
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    width: 70px;
-    justify-content: space-between;
-
+    /*border: 1px solid black;*/
 }
 
-img {
-    /*margin-right: 20px;*/
+/* Dropdown Button */
+.dropbtn {
+    background-color: white;
+    border: none;
+    cursor: pointer;
 }
+
+.dropbtn :hover{
+    background-color: #D7E6EA;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    /*position: relative;*/
+    display: inline-block;
+    /*border: 1px solid red;*/
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);
+    z-index: 1001;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: Calibri, serif;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
 
 .content{
+    margin-top: 85px;
     display: flex;
     flex-direction: row;
     /*border: 1px solid black;*/
@@ -103,7 +205,7 @@ img {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    margin-left: 100px;
+    margin-left: 10vw;
     width: 82%;
     height: 100%;
     background-color: white;
@@ -126,7 +228,7 @@ p {
 
 
 
-button {
+#sbmt {
     background: #0B5D71;
     box-shadow: 0px 3px 3px #00000029;
     border-radius: 5px;
